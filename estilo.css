@@ -103,6 +103,7 @@ header {
     border: 1px solid gray;
     transition: transform 0.5s;
     cursor: pointer;
+    background-color: white;
 }
 
 .card:hover {
