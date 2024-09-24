@@ -18,6 +18,7 @@ let visuSatisfactory = 3;
 
 exibirVisualizacoes();
 
+// Verifica os filtros para mostrar somente os cards que possuem o value relacionado, usando como parâmetro o innerHTML da lista
 filtro.forEach((cat) => {
     cat.addEventListener("click", () => {
         let categoria = cat.innerHTML;
@@ -38,6 +39,8 @@ filtro.forEach((cat) => {
     });
 });
 
+
+// Verifica os cards pra quando clicar, fazer o incremento de visualização e abrir a notícia passando o Value do card como parâmetro
 links.forEach((link) => {
     link.addEventListener("click", () => {
         let noticia = link.getAttribute("Value");
@@ -122,8 +125,7 @@ function mostrarSeries() {
     });
 }
 
-// Funções de atualizar as visualizações
-
+// Função para atualizar as visualizações na tela
 function exibirVisualizacoes() {
     visuCards.forEach((card) => {
         let nome = card.getAttribute("Value");
@@ -154,6 +156,7 @@ function exibirVisualizacoes() {
 
 // Funções para mostrar a notícia clicada
 
+// Faz a troca entre a Nav-bar e o botão de retornar ao início
 function toggleNavBar() {
     filtro.forEach((filtro) => {
         filtro.classList.toggle("ocultar");
@@ -162,6 +165,7 @@ function toggleNavBar() {
     voltar.classList.toggle("ocultar");
 }
 
+// Exibe os cards na tela e oculta a notícia aberta
 function exibirCards() {
     ocultarCards();
 
@@ -172,12 +176,14 @@ function exibirCards() {
     toggleNavBar();
 }
 
+// Adiciona a classe ocultar para esconder os cards da tela
 function ocultarCards() {
     cards.forEach((card) => {
         card.classList.toggle("ocultar");
     });
 }
 
+// Oculta os cards e mostra a notícia referente ao value passado
 function exibirNoticia(nomeNoticia) {
     ocultarCards();
 
